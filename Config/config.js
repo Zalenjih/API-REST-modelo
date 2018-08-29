@@ -1,0 +1,1 @@
+module.exports.SEED = 'Sistema_Gestor_Hospital_098';
