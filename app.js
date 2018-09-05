@@ -21,15 +21,28 @@ mongoose.connection.openUri(CONEXION, { useNewUrlParser: true }, (err, res) => {
 // Permitir que los campos en los docuentos tengan valores únicos respecto a otros documentos
 mongoose.set('useCreateIndex', true)
 
+// Server index config
+
+
 // Importando rutas
 const appRoutes = require('./Routes/app');
 const usuarioRoutes = require('./Routes/usuario');
 const loginRoutes = require('./Routes/login');
+const hospitalRoutes = require('./Routes/hospital');
+const medicoRoutes = require('./Routes/medico');
+const busqeudaRoutes = require('./Routes/busqueda');
+const uploadRoutes = require('./Routes/upload');
+const imagesRoutes = require('./Routes/images');
 
 
 // Rutas
 app.use('/usuario', usuarioRoutes);
+app.use('/hospital', hospitalRoutes);
+app.use('/medico', medicoRoutes);
+app.use('/busqueda', busqeudaRoutes);
 app.use('/login', loginRoutes);
+app.use('/upload', uploadRoutes);
+app.use('/img', imagesRoutes);
 app.use('/', appRoutes);
 
 // Escuchar peticiones

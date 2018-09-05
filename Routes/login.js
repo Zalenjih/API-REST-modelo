@@ -1,10 +1,16 @@
 const express = require('express');
+const app = express();
+
+// Herramienta para encriptar la constaseña
 const bcrypt = require('bcryptjs');
+
+// Herramienta para validación del jwt generado en el login
 const jwt = require('jsonwebtoken');
 
-const app = express();
+// Modelo de datos
 const Usuario = require('../Models/usuario');
 
+// La semilla que autentica si el token es original
 const SEED = require('../Config/config').SEED;
 
 app.post('/', (req, res) => {
