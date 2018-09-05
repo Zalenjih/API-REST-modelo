@@ -18,6 +18,7 @@ const usuarioSquema = mongoose.Schema({
     password: { type: String, required: [true, 'La constaseña es necesaria'] },
     img: { type: String, required: false },
     role: { type: String, required: true, uppercase: true, default: 'USER_ROLE', enum: rolesValidos },
+    google: { type: Boolean, default: false }
 });
 /*
  A diferencia de la configuración normal de esquemas, aquí se proporcionan características
