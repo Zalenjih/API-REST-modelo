@@ -3,10 +3,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-
 // Inicializar variables
 const app = express();
 const CONEXION = 'mongodb://localhost:27017/hospitalDB';
+
+// CORS
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+    next();
+});
 
 // Body-Parser
 // Parse application/x-www-form-urlencoded
